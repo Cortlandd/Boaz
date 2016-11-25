@@ -17,7 +17,10 @@ package com.chess.boaz.Engine.Classic.Board;
  *
  */
 
-public abstract class Tile {
+import com.chess.boaz.Engine.Classic.Pieces.Piece;
+
+public abstract class
+Tile {
 
     int tileCoordinate;
 
@@ -32,6 +35,9 @@ public abstract class Tile {
     /* Get the piece of a given tile. */
     public abstract Piece getPiece();
 
+    /*
+    *   Classification for an empty Tile
+    */
     public static final class EmptyTile extends Tile{
         EmptyTile(int coordinate) {
             super(coordinate);
@@ -47,6 +53,28 @@ public abstract class Tile {
         @Override
         public Piece getPiece() {
             return null;
+        }
+    }
+
+    /*
+    *   Classification for an occupied Tile
+    */
+    public static final class OccupiedTile extends Tile {
+        Piece pieceOnTile;
+
+        OccupiedTile(int tileCoordinate, Piece pieceOnTile) {
+            super(tileCoordinate);
+            this.pieceOnTile = pieceOnTile;
+        }
+
+        @Override
+        public boolean isTileOccupied() {
+            return true;
+        }
+
+        @Override
+        public Piece getPiece() {
+            return this.pieceOnTile;
         }
     }
 

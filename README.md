@@ -13,7 +13,11 @@ Should there be a way to specify when you want to make a move? A specific
 command such as "Make Move" then ```E4 Bishop to VALID POSITION```
 
 Plans:
+
 A Mobile App
+
 A Desktop App
+
 A Web App
+
 -- How cool would it be to be able to use software like [Neurable](https://neurable.com) to make moves?
